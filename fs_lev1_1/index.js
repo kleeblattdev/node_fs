@@ -1,6 +1,6 @@
 import fs from 'fs'
 
-fs.open('./blog1.txt',(err)=>{
+/* fs.open('./blog1.txt',(err)=>{
     if(err) console.log('can not open file',err)
 })
 
@@ -42,4 +42,8 @@ fs.writeFile('./hello.txt','Sommer,Sonne,Sonnenschein',err =>{
 
 fs.rename('./hello.txt','./HelloWorld.txt',err =>{
     if(err) console.log(err)
-})
+}) */
+
+fs.promises.mkdir('./promises',{recursive:false})
+.then(fs.promises.writeFile('./promises/blog1.txt','Promises erfüllt'))
+.catch()

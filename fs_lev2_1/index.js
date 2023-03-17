@@ -8,7 +8,7 @@ import data from './data.json' assert {type: "json"}
     console.log('File data:', jsonString)
 }) */
 
-fs.writeFile('./data.txt',"",(err)=>{
+/* fs.writeFile('./data.txt',"",(err)=>{
     if (err) console.log(err)
     else{
         fs.open('./data.txt','a+',(err,fd)=>{
@@ -20,5 +20,11 @@ fs.writeFile('./data.txt',"",(err)=>{
                 })
             })
         }})
+    }
+}) */
+
+data.forEach((item)=>{
+    for (let i=0; i<data.length; i++){
+    fs.promises.writeFile('./dataPromises.txt', `${item.id} - ${item.title} \n ${item.description} \n \n`, "utf8" ,{flag: 'a+'})
     }
 })

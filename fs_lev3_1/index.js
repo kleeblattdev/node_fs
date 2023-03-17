@@ -23,4 +23,10 @@ function fun(parameter){
     })
 }
 
-fun("hallo? \n")
+/* fun("hallo? \n") */
+
+function promiseFun (parameter){
+    fs.promises.mkdir('./promise', {recursive:true},parameter)
+.then(fs.promises.writeFile('./promise/promise.txt',parameter))}
+
+promiseFun("promise?\n")
